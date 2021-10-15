@@ -33,6 +33,9 @@ const checkWin = ()=>{
         if((boxtext[e[0]].innerText === boxtext[e[1]].innerText)
          && (boxtext[e[2]].innerText === boxtext[e[1]].innerText)
          && (boxtext[e[0]].innerText !== "")){
+             boxtext[e[0]].style.color = "red";  // Mark Won Boxtext as Red Color
+             boxtext[e[1]].style.color = "red";  // Mark Won Boxtext as Red Color
+             boxtext[e[2]].style.color = "red";  // Mark Won Boxtext as Red Color
              document.querySelector(".info").innerText = boxtext[e[0]].innerText + " Won🎉!!";
              isgameover = true;
              gameover.play();
@@ -62,7 +65,8 @@ for(let i=0; i<9; i++){
 reset.addEventListener("click", ()=>{
     let boxtexts = document.querySelectorAll(".box");
     Array.from(boxtexts).forEach(element =>{
-        element.innerText = ""
+        element.innerText = "";  // Reset Text
+        element.style.color = "#00ADB5";  // Reset Text Color
     });
     turn = "X";
     isgameover = false;
